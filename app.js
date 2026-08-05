@@ -87,23 +87,30 @@ async function loadUser() {
 
 function saveContact() {
 
-    const name = document.getElementById("name").textContent;
-    const company = document.getElementById("company").textContent;
-    const position = document.getElementById("position").textContent;
+    const name = document.getElementById("name").textContent.trim();
+    const company = document.getElementById("company").textContent.trim();
 
     const phoneElement = document.querySelector("#phone a");
     const emailElement = document.querySelector("#email a");
     const websiteElement = document.querySelector("#website a");
 
-    const phone = phoneElement ? phoneElement.textContent.trim() : "";
-    const email = emailElement ? emailElement.textContent.trim() : "";
-    const website = websiteElement ? websiteElement.href : "";
+    const phone = phoneElement
+        ? phoneElement.textContent.trim()
+        : "";
+
+    const email = emailElement
+        ? emailElement.textContent.trim()
+        : "";
+
+    const website = websiteElement
+        ? websiteElement.href
+        : "";
 
     const vCard = `BEGIN:VCARD
 VERSION:3.0
+N:;${name};;;
 FN:${name}
 ORG:${company}
-TITLE:${position}
 TEL;TYPE=CELL:${phone}
 EMAIL:${email}
 URL:${website}
@@ -121,7 +128,6 @@ END:VCARD`;
     const link = document.createElement("a");
 
     link.href = url;
-
     link.download = `${name}.vcf`;
 
     document.body.appendChild(link);
@@ -131,7 +137,6 @@ END:VCARD`;
     document.body.removeChild(link);
 
     URL.revokeObjectURL(url);
-
 }
 
 async function saveNameCard() {
