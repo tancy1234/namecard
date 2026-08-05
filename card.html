@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Physical Name Card</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #3d3838;
+
+            font-family: Arial, sans-serif;
+        }
+
+
+        /* =================================
+           PHYSICAL CARD
+           85.6mm × 54mm
+           ================================= */
+
+        .card {
+            width: 85.6mm;
+            height: 54mm;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background: #bdcdea;
+
+            color: #111111;
+
+            border-radius: 3.2mm;
+        }
+
+
+        /* =================================
+           DECORATIVE SIDE
+           ================================= */
+
+        .accent {
+            position: absolute;
+
+            top: 0;
+            right: 0;
+
+            width: 18mm;
+            height: 100%;
+
+            background: #f0e9e9;
+
+            clip-path: polygon(
+                35% 0,
+                100% 0,
+                100% 100%,
+                0 100%
+            );
+        }
+
+
+        /* =================================
+           LOGO
+           ================================= */
+
+        .logo {
+            position: absolute;
+
+            top: 4.5mm;
+            left: 6mm;
+
+            width: 34mm;
+            height: 14mm;
+
+            object-fit: contain;
+
+            object-position: left center;
+        }
+
+
+        /* =================================
+           COMPANY
+           ================================= */
+
+        .company {
+            position: absolute;
+
+            left: 6mm;
+            top: 19mm;
+
+            max-width: 58mm;
+
+            font-size: 2.5mm;
+
+            font-weight: 600;
+
+            letter-spacing: 0.35mm;
+
+            text-transform: uppercase;
+
+            color: #777777;
+        }
+
+
+        /* =================================
+           NAME
+           ================================= */
+
+        .name {
+            position: absolute;
+
+            left: 6mm;
+            bottom: 13mm;
+
+            max-width: 65mm;
+
+            font-size: 5mm;
+
+            font-weight: 700;
+
+            line-height: 1.1;
+
+            letter-spacing: 0.25mm;
+
+            color: #111111;
+        }
+
+
+        /* =================================
+           POSITION
+           ================================= */
+
+        .position {
+            position: absolute;
+
+            left: 6mm;
+            bottom: 7mm;
+
+            max-width: 60mm;
+
+            font-size: 2.7mm;
+
+            font-weight: 400;
+
+            letter-spacing: 0.25mm;
+
+            text-transform: uppercase;
+
+            color: #777777;
+        }
+
+
+        /* =================================
+           NFC LABEL
+           ================================= */
+
+        .nfc-label {
+            position: absolute;
+
+            right: 4mm;
+            bottom: 5mm;
+
+            width: 13mm;
+
+            text-align: center;
+
+            color: rgb(4, 3, 3);
+
+            font-size: 2mm;
+
+            letter-spacing: 0.15mm;
+        }
+
+
+        .nfc-icon {
+            display: block;
+
+            font-size: 5mm;
+
+            margin-bottom: 1mm;
+        }
+
+
+        /* =================================
+           PRINT
+           ================================= */
+
+        @media print {
+
+            body {
+                background: white;
+            }
+
+            .card {
+                box-shadow: none;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="card">
+
+        <!-- Decorative side -->
+        <div class="accent"></div>
+
+
+        <!-- Company logo -->
+        <img
+            src="gatsystem_logo.jpg"
+            class="logo"
+            alt="Company Logo"
+        >
+
+
+        <!-- Company -->
+        <div
+            class="company"
+            id="company"
+        ></div>
+
+
+        <!-- Name -->
+        <div
+            class="name"
+            id="name"
+        ></div>
+
+
+        <!-- Position -->
+        <div
+            class="position"
+            id="position"
+        ></div>
+
+
+        <!-- NFC -->
+        <div class="nfc-label">
+
+            <span class="nfc-icon">◉</span>
+
+            TAP TO CONNECT
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        async function loadUser() {
+
+            const params =
+                new URLSearchParams(
+                    window.location.search
+                );
+
+            const userId =
+                params.get("id");
+
+
+            try {
+
+                const response =
+                    await fetch("users.json");
+
+
+                const users =
+                    await response.json();
+
+
+                let user;
+
+
+                if (userId) {
+
+                    user =
+                        users.find(
+                            u => u.id === userId
+                        );
+
+                } else {
+
+                    user =
+                        users[0];
+
+                }
+
+
+                if (!user) {
+
+                    document.querySelector(".card").innerHTML = `
+                        <h2>User Not Found</h2>
+                    `;
+
+                    return;
+
+                }
+
+
+                document.getElementById("company")
+                    .textContent =
+                    user.company || "";
+
+
+                document.getElementById("name")
+                    .textContent =
+                    user.name || "";
+
+
+                document.getElementById("position")
+                    .textContent =
+                    user.position || "";
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Error loading users.json:",
+                    error
+                );
+
+            }
+
+        }
+
+
+        loadUser();
+
+    </script>
+
+
+</body>
+
+</html>
