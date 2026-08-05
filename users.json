@@ -28,5 +28,20 @@
             "linkedin": "https://www.linkedin.com/in/josephinegooiboonhar/"
             
         }
+    },
+    {
+        "id": "003",
+        "name": "Shook Fen Liew",
+        "position": "Human Resources Manager",
+        "department": "Human Resources Department",
+        "company": "GAT System Sdn Bhd",
+        "phone": "+60173083108",
+        "email": "---",
+        "website": "https://www.gatsystem.com/",
+        "address": "THE VERTICAL, BLOCK A, 23A-05, Jalan Kerinchi, Bangsar South, 59200, Kuala Lumpur, Malaysia.",
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/shook-fen-liew-381b27249/"
+            
+        }
     }
 ]
