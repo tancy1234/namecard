@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Digital Name Card</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="page-container">
+
+        <!-- NAME CARD -->
+        <div class="name-card">
+
+            <div class="logo-container">
+                <img
+                    src="gatsystem_logo.jpg"
+                    alt="Company Logo"
+                    class="company-logo"
+                >
+            </div>
+
+            <div class="company" id="company"></div>
+
+            <div class="name" id="name"></div>
+
+            <div class="position" id="position"></div>
+
+            <div class="department" id="department"></div>
+
+            <div class="info">
+
+                <div class="info-item">
+                    <div class="icon">📞</div>
+                    <div class="info-text" id="phone"></div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon">✉️</div>
+                    <div class="info-text" id="email"></div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon">🌐</div>
+                    <div class="info-text" id="website"></div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon">📍</div>
+                    <div class="info-text" id="address"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- LINKEDIN + SAVE CONTACT -->
+        <div class="bottom-actions">
+
+            <a
+                href="#"
+                id="linkedin"
+                class="linkedin-button"
+                target="_blank"
+            >
+                LinkedIn
+            </a>
+
+            <button
+                class="save-button"
+                onclick="saveContact()"
+            >
+                Save Contact
+            </button>
+
+        </div>
+
+
+        <!-- SAVE NAME CARD -->
+        <button
+            class="save-name-card-button"
+            onclick="saveNameCard()"
+        >
+            Save Name Card
+        </button>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

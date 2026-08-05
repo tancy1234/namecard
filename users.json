@@ -1,0 +1,32 @@
+[
+    {
+        "id": "001",
+        "name": "Tan Chin Kee",
+        "position": "General Manager",
+        "department": "Information Technology Department",
+        "company": "GAT System Sdn Bhd",
+        "phone": "+60126670045",
+        "email": "ckchin@gatsystem.net",
+        "website": "https://www.gatsystem.com/",
+        "address": "THE VERTICAL, BLOCK A, 23A-05, Jalan Kerinchi, Bangsar South, 59200, Kuala Lumpur, Malaysia.",
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/chin-kee-tan-7291b224/"
+            
+        }
+    },
+    {
+        "id": "002",
+        "name": "Josephine Gooi",
+        "position": "Customer Experience Manager",
+        "department": "Human Resources Department",
+        "company": "GAT System Sdn Bhd",
+        "phone": "+60132546001",
+        "email": "josephinegbh@gmail.com",
+        "website": "https://www.gatsystem.com/",
+        "address": "THE VERTICAL, BLOCK A, 23A-05, Jalan Kerinchi, Bangsar South, 59200, Kuala Lumpur, Malaysia.",
+        "social": {
+            "linkedin": "https://www.linkedin.com/in/josephinegooiboonhar/"
+            
+        }
+    }
+]
