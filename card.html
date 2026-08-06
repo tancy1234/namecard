@@ -12,6 +12,116 @@
     <link id="card-style" rel="stylesheet" href="card.css">
     <title>Physical Name Card</title>
 
+    <style>
+.middle-decoration {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+/* =========================
+   DOT PATTERN
+   ========================= */
+
+.dot-pattern {
+    position: absolute;
+
+    left: 44%;
+    top: 23%;
+
+    width: 145px;
+    height: 120px;
+
+    background-image: radial-gradient(
+        rgba(0, 0, 0, 0.22) 1.2px,
+        transparent 1.2px
+    );
+
+    background-size: 12px 12px;
+
+    opacity: 0.55;
+
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 15%,
+        black 85%,
+        transparent
+    );
+}
+
+
+/* =========================
+   OUTLINE POLYGON
+   ========================= */
+
+.outline-polygon {
+    position: absolute;
+
+    left: 39%;
+    top: 10%;
+
+    width: 350px;
+    height: 280px;
+
+    border: 1px solid rgba(0, 0, 0, 0.13);
+
+    clip-path: polygon(
+        35% 0%,
+        100% 0%,
+        72% 50%,
+        100% 100%,
+        25% 100%,
+        55% 50%
+    );
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   FLOWING LINES
+   ========================= */
+
+.middle-lines {
+    position: absolute;
+
+    left: 42%;
+    top: 0;
+
+    width: 280px;
+    height: 100%;
+}
+
+.middle-lines span {
+    height: 1px;
+
+    background: rgba(0, 0, 0, 0.16);
+
+    transform: rotate(-28deg);
+}
+
+.middle-lines span:nth-child(1) {
+    top: 42%;
+    left: 0;
+    width: 220px;
+}
+
+.middle-lines span:nth-child(2) {
+    top: 50%;
+    left: 25px;
+    width: 250px;
+}
+
+.middle-lines span:nth-child(3) {
+    top: 58%;
+    left: 55px;
+    width: 190px;
+}
+    </style>
+
 </head>
 
 
@@ -77,6 +187,19 @@
 
         </div>
 
+        <div class="middle-decoration">
+
+            <div class="dot-pattern"></div>
+
+            <div class="outline-polygon"></div>
+
+            <div class="middle-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
 
     </div>
 

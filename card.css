@@ -493,3 +493,12 @@ body {
 .nfc-label {
     z-index: 10;
 }
+
+.card {
+    background: linear-gradient(
+        135deg,
+        #f5eadc 0%,
+        #d6b89b 50%,
+        #76513d 100%
+    );
+}
