@@ -316,7 +316,7 @@ body {
 .company {
     position: absolute;
 
-    left: 6mm;
+    left: 3mm;
     top: 19mm;
 
     max-width: 58mm;
@@ -379,7 +379,13 @@ body {
 
     text-transform: uppercase;
 
-    color: #312d2d;
+    color: #423a3a;
+
+    width: 100px;
+    
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 
@@ -500,5 +506,42 @@ body {
         #e5efe5 0%,
         #a8c5aa 50%,
         #4f7257 100%
+    );
+}
+
+.profile-photo {
+    position: absolute;
+    top: 18px;
+    right: 25px;
+    width: 95px;
+    height: auto;
+    z-index: 5;
+    object-fit: contain;
+}
+
+.card-photo {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 45%;
+    height: 92%;
+
+    object-fit: cover;
+    object-position: center top;
+
+    z-index: 0;
+
+    transform: scaleX(-1);
+
+    clip-path: polygon(
+        28% 0%,
+        100% 0%,
+        100% 100%,
+        0% 100%,
+        18% 72%,
+        35% 48%,
+        22% 20%
     );
 }
