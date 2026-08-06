@@ -9,214 +9,8 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
-
+    <link id="card-style" rel="stylesheet" href="card.css">
     <title>Physical Name Card</title>
-
-    <style>
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            min-height: 100vh;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            background: #3d3838;
-
-            font-family: Arial, sans-serif;
-        }
-
-
-        /* =================================
-           PHYSICAL CARD
-           85.6mm × 54mm
-           ================================= */
-
-        .card {
-            width: 85.6mm;
-            height: 54mm;
-
-            position: relative;
-
-            overflow: hidden;
-
-            background: #bdcdea;
-
-            color: #111111;
-
-            border-radius: 3.2mm;
-        }
-
-
-        /* =================================
-           DECORATIVE SIDE
-           ================================= */
-
-        .accent {
-            position: absolute;
-
-            top: 0;
-            right: 0;
-
-            width: 18mm;
-            height: 100%;
-
-            background: #f0e9e9;
-
-            clip-path: polygon(
-                35% 0,
-                100% 0,
-                100% 100%,
-                0 100%
-            );
-        }
-
-
-        /* =================================
-           LOGO
-           ================================= */
-
-        .logo {
-            position: absolute;
-
-            top: 4.5mm;
-            left: 6mm;
-
-            width: 34mm;
-            height: 14mm;
-
-            object-fit: contain;
-
-            object-position: left center;
-        }
-
-
-        /* =================================
-           COMPANY
-           ================================= */
-
-        .company {
-            position: absolute;
-
-            left: 6mm;
-            top: 19mm;
-
-            max-width: 58mm;
-
-            font-size: 2.5mm;
-
-            font-weight: 600;
-
-            letter-spacing: 0.35mm;
-
-            text-transform: uppercase;
-
-            color: #777777;
-        }
-
-
-        /* =================================
-           NAME
-           ================================= */
-
-        .name {
-            position: absolute;
-
-            left: 6mm;
-            bottom: 13mm;
-
-            max-width: 65mm;
-
-            font-size: 5mm;
-
-            font-weight: 700;
-
-            line-height: 1.1;
-
-            letter-spacing: 0.25mm;
-
-            color: #111111;
-        }
-
-
-        /* =================================
-           POSITION
-           ================================= */
-
-        .position {
-            position: absolute;
-
-            left: 6mm;
-            bottom: 7mm;
-
-            max-width: 60mm;
-
-            font-size: 2.7mm;
-
-            font-weight: 400;
-
-            letter-spacing: 0.25mm;
-
-            text-transform: uppercase;
-
-            color: #777777;
-        }
-
-
-        /* =================================
-           NFC LABEL
-           ================================= */
-
-        .nfc-label {
-            position: absolute;
-
-            right: 4mm;
-            bottom: 5mm;
-
-            width: 13mm;
-
-            text-align: center;
-
-            color: rgb(4, 3, 3);
-
-            font-size: 2mm;
-
-            letter-spacing: 0.15mm;
-        }
-
-
-        .nfc-icon {
-            display: block;
-
-            font-size: 5mm;
-
-            margin-bottom: 1mm;
-        }
-
-
-        /* =================================
-           PRINT
-           ================================= */
-
-        @media print {
-
-            body {
-                background: white;
-            }
-
-            .card {
-                box-shadow: none;
-            }
-
-        }
-
-    </style>
 
 </head>
 
@@ -267,6 +61,22 @@
             TAP TO CONNECT
 
         </div>
+
+        <div class="flow-1"></div>
+        <div class="flow-2"></div>
+        <div class="flow-3"></div>
+
+        <div class="right-shape">
+
+            <div class="right-blue-1"></div>
+            <div class="right-blue-2"></div>
+            <div class="right-blue-3"></div>
+            <div class="right-blue-4"></div>
+            <div class="right-blue-5"></div>
+            <div class="right-blue-6"></div>
+
+        </div>
+
 
     </div>
 
@@ -323,6 +133,35 @@
                 }
 
 
+                /* =================================
+                SELECT CARD DESIGN
+                ================================= */
+
+                const cardStyle =
+                    document.getElementById("card-style");
+
+
+                if (user.id === "001") {
+
+                    cardStyle.href = "card.css";
+
+                }
+                else if (user.id === "002") {
+
+                    cardStyle.href = "card2.css";
+
+                }
+                else if (user.id === "003") {
+
+                    cardStyle.href = "card3.css";
+
+                }
+
+
+                /* =================================
+                LOAD USER INFORMATION
+                ================================= */
+
                 document.getElementById("company")
                     .textContent =
                     user.company || "";
@@ -336,6 +175,7 @@
                 document.getElementById("position")
                     .textContent =
                     user.position || "";
+
 
             }
 

@@ -1,0 +1,495 @@
+/* =================================
+   GEOMETRIC DESIGN
+   ================================= */
+
+.design {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =================================
+   RIGHT GEOMETRIC FLOW
+   ================================= */
+
+.right-shape {
+    position: absolute;
+
+    right: -1mm;
+    top: 0;
+
+    width: 30mm;
+    height: 100%;
+}
+
+
+/* =================================
+   1. VERY LIGHT BROWN - BOTTOM
+   ================================= */
+
+.right-blue-1 {
+    position: absolute;
+    inset: 0;
+
+    background: #F6EEE7;
+
+    clip-path: polygon(
+        0% 100%,
+        100% 100%,
+        100% 72%,
+        88% 72%,
+        72% 82%,
+        55% 90%,
+        35% 96%,
+        18% 100%
+    );
+}
+
+
+/* =================================
+   2. LIGHT BROWN
+   ================================= */
+
+.right-blue-2 {
+    position: absolute;
+    inset: 0;
+
+    background: #DDBFA5;
+
+    clip-path: polygon(
+        18% 100%,
+        35% 96%,
+        55% 90%,
+        72% 82%,
+        88% 72%,
+        100% 72%,
+        100% 55%,
+        90% 55%,
+        80% 62%,
+        68% 70%,
+        55% 78%,
+        40% 86%,
+        25% 94%
+    );
+}
+
+
+/* =================================
+   3. MEDIUM BROWN
+   ================================= */
+
+.right-blue-3 {
+    position: absolute;
+    inset: 0;
+
+    background: #C08A63;
+
+    clip-path: polygon(
+        25% 94%,
+        40% 86%,
+        55% 78%,
+        68% 70%,
+        80% 62%,
+        90% 55%,
+        100% 55%,
+        100% 38%,
+        92% 38%,
+        84% 45%,
+        76% 51%,
+        67% 58%,
+        57% 65%,
+        46% 73%,
+        35% 82%
+    );
+}
+
+
+/* =================================
+   4. DEEP BROWN
+   ================================= */
+
+.right-blue-4 {
+    position: absolute;
+    inset: 0;
+
+    background: #9A6040;
+
+    clip-path: polygon(
+        35% 82%,
+        46% 73%,
+        57% 65%,
+        67% 58%,
+        76% 51%,
+        84% 45%,
+        92% 38%,
+        100% 38%,
+        100% 20%,
+        93% 20%,
+        86% 27%,
+        79% 33%,
+        71% 40%,
+        62% 47%,
+        52% 54%,
+        42% 62%
+    );
+}
+
+
+/* =================================
+   5. TRANSITION BROWN
+   ================================= */
+
+.right-blue-5 {
+    position: absolute;
+    inset: 0;
+
+    background: #75452F;
+
+    clip-path: polygon(
+        42% 62%,
+        52% 54%,
+        62% 47%,
+        71% 40%,
+        79% 33%,
+        86% 27%,
+        92% 22%,
+        100% 22%,
+        100% 12%,
+        95% 12%,
+        89% 18%,
+        82% 24%,
+        75% 30%,
+        67% 36%,
+        58% 43%,
+        49% 50%
+    );
+}
+
+
+/* =================================
+   6. DARK BROWN - TOP
+   ================================= */
+
+.right-blue-6 {
+    position: absolute;
+    inset: 0;
+
+    background: #4A2C20;
+
+    clip-path: polygon(
+        49% 50%,
+        58% 43%,
+        67% 36%,
+        75% 30%,
+        82% 24%,
+        89% 18%,
+        95% 12%,
+        100% 12%,
+        100% 0%,
+        42% 0%
+    );
+}
+
+
+/* =================================
+   ANGULAR BOTTOM FLOW
+   ================================= */
+
+.bottom-flow {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 29mm;
+    height: 18mm;
+
+    background: #F6EEE7;
+
+    clip-path: polygon(
+        100% 100%,
+        0% 100%,
+        45% 55%,
+        72% 20%,
+        100% 0%
+    );
+}
+
+
+/* =================================
+   GENERAL
+   ================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #3d3838;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* =================================
+   PHYSICAL CARD
+   85.6mm × 54mm
+   ================================= */
+
+.card {
+    width: 85.6mm;
+    height: 54mm;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: white;
+
+    color: #111111;
+
+    border-radius: 3.2mm;
+
+    z-index: -5;
+}
+
+
+/* =================================
+   DECORATIVE SIDE
+   ================================= */
+
+.accent {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 18mm;
+    height: 100%;
+
+    background: #f0e9e9;
+
+    clip-path: polygon(
+        35% 0,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+}
+
+
+/* =================================
+   LOGO
+   ================================= */
+
+.logo {
+    position: absolute;
+
+    top: 4.5mm;
+    left: 6mm;
+
+    width: 34mm;
+    height: 14mm;
+
+    object-fit: contain;
+
+    object-position: left center;
+}
+
+
+/* =================================
+   COMPANY
+   ================================= */
+
+.company {
+    position: absolute;
+
+    left: 6mm;
+    top: 19mm;
+
+    max-width: 58mm;
+
+    font-size: 2.5mm;
+
+    font-weight: 600;
+
+    letter-spacing: 0.35mm;
+
+    text-transform: uppercase;
+
+    color: #777777;
+
+    font-size: medium;
+}
+
+
+/* =================================
+   NAME
+   ================================= */
+
+.name {
+    position: absolute;
+
+    left: 6mm;
+    bottom: 13mm;
+
+    max-width: 65mm;
+
+    font-size: 5mm;
+
+    font-weight: 700;
+
+    line-height: 1.1;
+
+    letter-spacing: 0.25mm;
+
+    color: #111111;
+}
+
+
+/* =================================
+   POSITION
+   ================================= */
+
+.position {
+    position: absolute;
+
+    left: 6mm;
+    bottom: 7mm;
+
+    max-width: 60mm;
+
+    font-size: 2.7mm;
+
+    font-weight: 400;
+
+    letter-spacing: 0.25mm;
+
+    text-transform: uppercase;
+
+    color: #312d2d;
+}
+
+
+/* =================================
+   NFC LABEL
+   ================================= */
+
+.nfc-label {
+    position: absolute;
+
+    right: 4mm;
+    bottom: 5mm;
+
+    width: 13mm;
+
+    text-align: center;
+
+    color: rgb(4, 3, 3);
+
+    font-size: 2mm;
+
+    letter-spacing: 0.15mm;
+}
+
+
+.nfc-icon {
+    display: block;
+
+    font-size: 5mm;
+
+    margin-bottom: 1mm;
+}
+
+
+/* =================================
+   OLD FLOW
+   ================================= */
+
+.flow-1 {
+    position: absolute;
+
+    left: -8mm;
+    top: -6mm;
+
+    width: 25mm;
+    height: 70mm;
+
+    background: #4A2C20;
+
+    transform: rotate(18deg);
+
+    z-index: -3;
+}
+
+
+.flow-2 {
+    position: absolute;
+
+    left: 0mm;
+    top: -8mm;
+
+    width: 18mm;
+    height: 70mm;
+
+    background: #C08A63;
+
+    transform: rotate(18deg);
+
+    z-index: -2;
+}
+
+
+.flow-3 {
+    position: absolute;
+
+    left: 5mm;
+    top: -10mm;
+
+    width: 12mm;
+    height: 70mm;
+
+    background: #DDBFA5;
+
+    transform: rotate(18deg);
+
+    z-index: -1;
+}
+
+
+/* =================================
+   PRINT
+   ================================= */
+
+@media print {
+
+    body {
+        background: white;
+    }
+
+    .card {
+        box-shadow: none;
+    }
+
+}
+
+
+.logo,
+.company,
+.name,
+.position,
+.nfc-label {
+    z-index: 10;
+}
